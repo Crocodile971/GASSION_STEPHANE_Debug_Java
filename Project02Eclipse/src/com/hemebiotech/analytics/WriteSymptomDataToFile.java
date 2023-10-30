@@ -21,7 +21,6 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
     @Override
     public void writeSymptoms(Map<String, Integer> symptoms) {
 
-        symptoms = new HashMap<String, Integer>();
 
         File file = new File(fileWritePath);
         if (!file.exists())
@@ -33,21 +32,26 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
             }
         else {
             try {
-                FileWriter fileWriter = new FileWriter(file);
+                 FileWriter fileWriter = new FileWriter(file);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
 
                 for (Map.Entry<String, Integer> entry : symptoms.entrySet()) {
                     String key = entry.getKey();
                     Integer value = entry.getValue();
+
                     writer.write("symptom from file: " + key + " : " + value);
                     writer.newLine();
+
+
 
                 }
                 writer.close();
             } catch (IOException e) {
+                System.out.println("Défaillance lors du chargement, erreur: " + e.getMessage());
                 e.printStackTrace();
             }
         }
+
 
     }
 }
