@@ -4,7 +4,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
@@ -32,22 +31,17 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
             }
         else {
             try {
-                 FileWriter fileWriter = new FileWriter(file);
+                FileWriter fileWriter = new FileWriter(file);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
 
                 for (Map.Entry<String, Integer> entry : symptoms.entrySet()) {
-                    String key = entry.getKey();
-                    Integer value = entry.getValue();
 
-                    writer.write("symptom from file: " + key + " : " + value);
+                    writer.write("symptom from file: " + entry.getKey() + " : " + entry.getValue());
                     writer.newLine();
-
-
-
                 }
                 writer.close();
             } catch (IOException e) {
-                System.out.println("Défaillance lors du chargement, erreur: " + e.getMessage());
+                System.out.println("Failure while loading error " + e.getMessage());
                 e.printStackTrace();
             }
         }
