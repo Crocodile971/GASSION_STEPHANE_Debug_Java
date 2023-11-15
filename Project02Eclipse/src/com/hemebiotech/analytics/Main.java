@@ -3,6 +3,13 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * @author Crocodesiles
+ *
+ * Calling application steps in order
+ *
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -32,6 +39,15 @@ public class Main {
 
     }
 
+
+    /**
+     * Grouping the three object instantiations inti one method:
+     * reader: for reading the input file.
+     * writer: for writing the output file.
+     * analyticsCounter: for the other two.
+     *
+     * @return the value instantiated in the analyticsCounter object.
+     */
     public static AnalyticsCounter getAnalyticInstance() {
         ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
         WriteSymptomDataToFile writer = new WriteSymptomDataToFile("Project02Eclipse/result.out");
