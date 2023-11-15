@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * @author Crocodesiles
+ *
+ * Division of actions into several methods
+ *
+ */
 public class AnalyticsCounter {
     private ISymptomReader reader;
     private ISymptomWriter writer;

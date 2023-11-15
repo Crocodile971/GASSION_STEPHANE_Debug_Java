@@ -6,6 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * @author Crocodesiles
+ *
+ * Implementation of the ISymptomWriter interface
+ *
+ */
 public class WriteSymptomDataToFile implements ISymptomWriter {
 
     private String fileWritePath;
@@ -17,6 +23,13 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
         this.fileWritePath = fileWritePath;
     }
 
+    /**
+     *
+     * @param symptoms list sorted alphabetically
+     *
+     * Write to output file create to FileWriter
+     *
+     */
     @Override
     public void writeSymptoms(Map<String, Integer> symptoms) {
 

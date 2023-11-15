@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * @author Crocodesiles
+ *
+ * Implementation of the ISymptomReader interface
+ *
+ */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
     private String filePath;
@@ -18,6 +24,11 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
         this.filePath = filePath;
     }
 
+
+    /**
+     *
+     * @return reading the file as parameter of the FileReader
+     */
     @Override
     public List<String> getSymptoms() {
         ArrayList<String> result = new ArrayList<String>();
